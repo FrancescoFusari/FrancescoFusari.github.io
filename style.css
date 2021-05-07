@@ -1,0 +1,119 @@
+@font-face {
+    font-family: ClearfaceSTD;
+    font-weight: bold;
+    src: url("clearfacestd-bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: medium;
+    src: url("Montserrat-Medium.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: semi-bold;
+    src: url("Montserrat-SemiBold.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-weight: regular;
+    src: url("Montserrat-Regular.ttf") format("opentype");
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-line {
+    width: 50px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.menu-line-m {
+    width: 50px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.title {
+    font-family: ClearfaceSTD;
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family: ClearfaceSTD;
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-weight: semi-bold;
+    margin-top: 0px;
+}
+
+p {
+    font-family: Montserrat;
+    font-weight: regular;
+    padding-left: 50px;
+}
+
+.body-grid {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+}
+
+.line {
+    border-left: 5px solid black;
+    height: 500px;
+    margin-top: 100px;
+}
+
+.circle {
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 315px;
+    left: 48px;
+}
+
+.blurred1 {
+    height: 125px;
+    width: 250px;
+    background-image: radial-gradient(#d095f2e1, #ffffff00);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 305px;
+    left: 60px;
+    filter: blur(25px);
+}
