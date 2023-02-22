@@ -295,7 +295,7 @@ h3 {
     justify-content: flex-start;
     align-items: self-start;
     padding: 30px;
-    width: 40vw;
+    width: 50vw;
     background-color: rgba(0, 0, 0, 0.069);
     backdrop-filter: blur(20px);
     border-style: solid;
