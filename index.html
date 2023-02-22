@@ -4,48 +4,242 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>Firefox Startpage</title>
     <link rel="stylesheet" href="style.css">
     
-    <title>Document</title>
+
+<script>
+    fetch('https://api.ipdata.co?api-key=73aad7f261cb893df8bf7c7ba0f85cb32cda02512f9610b47666ab18')
+.then(response => response.json())
+.then(data => {
+  document.querySelector('#city').innerHTML = `${data.city}`;
+});
+  </script>
+
 </head>
-<body>
+<body id="element">
+    <div class="back" id="my-div">
 
-    <div class="blurred1"></div>
+    </div>
+<div class="topbar">
+    <div class="left-panel">
+        <p class="logotxt">FF</p>
+    </div>
+    <div class="center-panel">
+        <p id="city"></p>
+        <p><span id="datetime"></span></p>
 
-    <div class="navigation">
-        <div class="name-title">
-            <h2>Francesco Fusari</h2>
-            <h3>Web Designer / Developer</h3>
-        </div>
-        <div class="menu">
-            <div class="menu-line"></div>
-            <div class="menu-line-m"></div>
-            <div class="menu-line"></div>
-        </div>
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
     </div>
-    <div class="body-grid">
-        <div class="line-container">
-            <div class="line"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="text">
-            <div class="title">
-                <h1>Introduction</h1>
-            </div>
-            <div class="description">
-                <p>I am 23 years old Web Worker, I believe the Web should be user-centered, inclusive 
-                    <br> 
-                    and accessible. with a UI that use aestheticism to improve the User Experience.
-                    <br> 
-                    I believe it is important to find ways to bring more details and shades of emotions
-                    <br>
-                    and feelings into the digital world, by doing so we can bring user experiences to new 
-                    <br>
-                    levels of appreciation and interaction.</p>
-            </div>
-        </div>
-        <div class="white-right"></div>
+    <div class="right-panel">
+        <input type="button" class="button1" value="F11" onclick="toggleFullScreen(document.body)">
+        <button class="button1 small" id="my-button"> <img src="moon.png" alt="" srcset="" width="16px" height="16px"></button>
+        <script>
+          const myDiv = document.getElementById('my-div');
+const myButton = document.getElementById('my-button');
+
+myButton.addEventListener('click', () => {
+  myDiv.style.backgroundImage = "url('dark.jpg')";
+});
+        </script>
+        <button class="button1 small" id="my-button1"> <img src="sun.png" alt="" srcset="" width="16px" height="16px"></button>
+        <script>
+          const myDiv1 = document.getElementById('my-div');
+const myButton1 = document.getElementById('my-button1');
+
+myButton1.addEventListener('click', () => {
+  myDiv1.style.backgroundImage = "url('light.webp')";
+});
+        </script>
     </div>
+</div>
+<div class="appbar">
+<div class="icon" id="termicon">
+  <img src="terminal.png" alt="" width="32px" height="32px">
+  <p class="icon-text">Terminal</p>
+</div>
+
+<script>
+  const TerminalIcon = document.getElementById('termicon');
+  
+  TerminalIcon.addEventListener('click', () => {
+    dragSquare2.classList.remove('minimized');
+    termText.classList.remove('minimized');
+  });
+  </script>
+
+<div class="icon">
+  <img src="home.png" alt="" width="32px" height="32px">
+  <p class="icon-text">Home</p>
+</div>
+<div class="icon">
+  <img src="contact.png" alt="" width="32px" height="32px">
+  <p class="icon-text">Contact</p>
+</div>
+<div class="icon">
+  <img src="pencil.png" alt="" width="32px" height="32px">
+  <p class="icon-text">Skills</p>
+</div>
+</div>
+<div id="drag-square" class="terminal">
+    <div class="bar-buttons">
+        <div class="min"></div>
+        <div class="max"></div>
+        <div class="close"></div>
+    </div>
+    <div class="fetch-container">
+      <div class="fetch-ascii">
+        <p class="ascii">
+          ___ /\\\\\\\\\\\\\\\_________       <br> 
+          ___ \/\\\///////////_________       <br>
+          ____ \/\\\___________________      <br>
+          _____ \/\\\\\\\\\\\__________    <br>
+          ______ \/\\\///////__________ <br>   
+          _______ \/\\\________________ <br>  
+          ________ \/\\\_______________  <br>
+          _________ \/\\\______________ <br>
+          __________ \///______________ <br>
+          <br>
+
+          ___ /\\\\\\\\\\\\\\\_________       <br> 
+          ___ \/\\\///////////_________       <br>
+          ____ \/\\\___________________      <br>
+          _____ \/\\\\\\\\\\\__________    <br>
+          ______ \/\\\///////__________ <br>   
+          _______ \/\\\________________ <br>  
+          ________ \/\\\_______________  <br>
+          _________ \/\\\______________ <br>
+          __________ \///______________ <br>
+        </p>
+      </div>
+    <div class="fetch">
+        <p class="input-term">francesco@surface-laptop> $ neofetch</p>
+        <p class="term-text"> <span class="info">OS:</span> Crystal Linux </p>
+        <p class="term-text"> <span class="info">Host:</span> Surface Laptop 3 124I:00036T:000M:03</p>
+        <p class="term-text"><span class="info">Host:</span> 6.1.10-arch1-1</p>
+        <p class="term-text"><span class="info">Host:</span> 12 hours 6 minutes</p>
+        <p class="term-text"><span class="info">Host:</span> 773 (pacman), 1 (rpm)</p>
+        <p class="term-text"><span class="info">Host:</span> bash 5.1.16</p>
+        <p class="term-text"><span class="info">Host:</span> 2256x1504</p>
+        <p class="term-text"><span class="info">Host:</span> GNOME 43.2 (Wayland)</p>
+        <p class="term-text vert-last" ><span class="info">Host:</span> Intel i5-1035G7 (8) @ 3.700GHz</p>
+    </div>
+  </div>
+</div>
+
+<div id="drag-square1" class="window">
+  <div class="bar-buttons">
+      <div class="min"></div>
+      <script>
+        const dragSquare2 = document.getElementById('drag-square');
+        const minButton = document.querySelector('.min');
+        const termText = document.querySelector('term-text');
+        
+        minButton.addEventListener('click', () => {
+          dragSquare2.classList.add('minimized');
+          termText.classList.add('minimized');
+        });
+        </script>
+      <div class="max"></div>
+      <div class="close"></div>
+  </div>
+  <div class="skills">
+    <img src="dev.png" alt="" srcset="">
+  </div>
+</div>
+
+
+
+    
+    <script>
+        const dragSquare = document.getElementById('drag-square');
+let isDragging = false;
+let dragOffset = { x: 0, y: 0 };
+let initialOffset = { x: 0, y: 0 };
+
+dragSquare.addEventListener('mousedown', (event) => {
+  isDragging = true;
+  initialOffset.x = dragSquare.offsetLeft;
+  initialOffset.y = dragSquare.offsetTop;
+  dragOffset.x = event.clientX;
+  dragOffset.y = event.clientY;
+});
+
+document.addEventListener('mousemove', (event) => {
+  if (isDragging) {
+    const x = event.clientX - dragOffset.x;
+    const y = event.clientY - dragOffset.y;
+    dragSquare.style.left = `${initialOffset.x + x}px`;
+    dragSquare.style.top = `${initialOffset.y + y}px`;
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+
+    </script>
+
+<script>
+  const dragSquare1 = document.getElementById('drag-square1');
+let isDragging1 = false;
+let dragOffset1 = { x: 0, y: 0 };
+let initialOffset1 = { x: 0, y: 0 };
+
+dragSquare1.addEventListener('mousedown', (event) => {
+isDragging1 = true;
+initialOffset1.x = dragSquare1.offsetLeft;
+initialOffset1.y = dragSquare1.offsetTop;
+dragOffset1.x = event.clientX;
+dragOffset1.y = event.clientY;
+});
+
+document.addEventListener('mousemove', (event) => {
+if (isDragging1) {
+const x = event.clientX - dragOffset1.x;
+const y = event.clientY - dragOffset1.y;
+dragSquare1.style.left = `${initialOffset1.x + x}px`;
+dragSquare1.style.top = `${initialOffset1.y + y}px`;
+}
+});
+
+document.addEventListener('mouseup', () => {
+isDragging1 = false;
+});
+
+
+</script>
+
+
+    <script>
+        function toggleFullScreen(elem) {
+    // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}
+    </script>
 </body>
 </html>
