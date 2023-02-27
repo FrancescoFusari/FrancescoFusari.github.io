@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Disabling cache during development -->
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
     <title>Firefox Startpage</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script src="/script.js" defer></script>
     
 
 <script>
@@ -56,67 +63,104 @@ myButton1.addEventListener('click', () => {
         </script>
     </div>
 </div>
+
+
+
 <div class="appbar">
-<div class="icon" id="termicon">
-  <img src="terminal.png" alt="" width="32px" height="32px">
-  <p class="icon-text">Terminal</p>
-</div>
 
-<script>
-  const TerminalIcon = document.getElementById('termicon');
+  <div class="icon" id="homeico">
+    <img src="home.png" alt="" width="24px" height="24px">
+    <p class="icon-text">Home</p>
+  </div>
+  <div class="icon" id="termicon">
+    <img src="terminal.png" alt="" width="24px" height="24px">
+    <p class="icon-text">Terminal</p>
+  </div>
   
-  TerminalIcon.addEventListener('click', () => {
-    dragSquare2.classList.remove('minimized');
-    termText.classList.remove('minimized');
-  });
-  </script>
+  <script>
+    const TerminalIcon = document.getElementById('termicon');
+    
+    TerminalIcon.addEventListener('click', () => {
+      dragSquare2.classList.remove('minimized');
+      termText.classList.remove('minimized');
+    });
+    </script>
+  
+  <div class="icon">
+    <img src="contact.png" alt="" width="24px" height="24px">
+    <p class="icon-text">Contact</p>
+  </div>
+  <div class="icon">
+    <img src="pencil.png" alt="" width="24px" height="24px">
+    <p class="icon-text">Skills</p>
+  </div>
+  </div>
 
-<div class="icon">
-  <img src="home.png" alt="" width="32px" height="32px">
-  <p class="icon-text">Home</p>
+  <div class="appbar1">
+    <div class="icon-badge" id="homeicobadge">Home</div>
+    <div class="icon-badge">Skills</div>
+    <div class="icon-badge">Terminal</div>
+    <div class="icon-badge">Contact</div>
+  </div>
+
+<div class="pulsa" id="pulsa1">
+  mostra
 </div>
-<div class="icon">
-  <img src="contact.png" alt="" width="32px" height="32px">
-  <p class="icon-text">Contact</p>
+
+<div class="mostra-container">
+  <div class="mostra">ciao</div>
 </div>
-<div class="icon">
-  <img src="pencil.png" alt="" width="32px" height="32px">
-  <p class="icon-text">Skills</p>
-</div>
-</div>
+
 <div id="drag-square" class="terminal">
     <div class="bar-buttons">
         <div class="min"></div>
         <div class="max"></div>
         <div class="close"></div>
     </div>
+    <p class="input-term">francesco@surface-laptop> $ neofetch</p>
     <div class="fetch-container">
       <div class="fetch-ascii">
         <p class="ascii">
-          ___ /\\\\\\\\\\\\\\\_________       <br> 
-          ___ \/\\\///////////_________       <br>
-          ____ \/\\\___________________      <br>
-          _____ \/\\\\\\\\\\\__________    <br>
-          ______ \/\\\///////__________ <br>   
-          _______ \/\\\________________ <br>  
-          ________ \/\\\_______________  <br>
-          _________ \/\\\______________ <br>
-          __________ \///______________ <br>
+          ___/\\\\\\\\\\\\\\\_________       <br> 
+          ___\/\\\///////////_________       <br>
+          ____\/\\\___________________      <br>
+          _____\/\\\\\\\\\\\__________    <br>
+          ______\/\\\///////__________ <br>   
+          _______\/\\\________________ <br>  
+          ________\/\\\_______________  <br>
+          _________\/\\\______________ <br>
+          __________\///______________ <br>
           <br>
 
-          ___ /\\\\\\\\\\\\\\\_________       <br> 
-          ___ \/\\\///////////_________       <br>
-          ____ \/\\\___________________      <br>
-          _____ \/\\\\\\\\\\\__________    <br>
-          ______ \/\\\///////__________ <br>   
-          _______ \/\\\________________ <br>  
-          ________ \/\\\_______________  <br>
-          _________ \/\\\______________ <br>
-          __________ \///______________ <br>
+          ___/\\\\\\\\\\\\\\\_________       <br> 
+          ___\/\\\///////////_________       <br>
+          ____\/\\\___________________      <br>
+          _____\/\\\\\\\\\\\__________    <br>
+          ______\/\\\///////__________ <br>   
+          _______\/\\\________________ <br>  
+          ________\/\\\_______________  <br>
+          _________\/\\\______________ <br>
+          __________\///______________ <br>
         </p>
+        <script>
+          const ascii = document.querySelector('.ascii');
+const lines = ascii.innerHTML.split('<br>');
+ascii.innerHTML = '';
+
+let i = 0;
+function typeWriter() {
+  if (i < lines.length) {
+    ascii.innerHTML += lines[i] + '<br>';
+    i++;
+    setTimeout(typeWriter, 200);
+  }
+}
+
+typeWriter();
+
+        </script>
       </div>
     <div class="fetch">
-        <p class="input-term">francesco@surface-laptop> $ neofetch</p>
         <p class="term-text"> <span class="info">OS:</span> Crystal Linux </p>
         <p class="term-text"> <span class="info">Host:</span> Surface Laptop 3 124I:00036T:000M:03</p>
         <p class="term-text"><span class="info">Host:</span> 6.1.10-arch1-1</p>
@@ -126,11 +170,37 @@ myButton1.addEventListener('click', () => {
         <p class="term-text"><span class="info">Host:</span> 2256x1504</p>
         <p class="term-text"><span class="info">Host:</span> GNOME 43.2 (Wayland)</p>
         <p class="term-text vert-last" ><span class="info">Host:</span> Intel i5-1035G7 (8) @ 3.700GHz</p>
-    </div>
+    
+      <script>
+      const fetchContainer = document.querySelector('.fetch');
+
+// Delay between lines
+const lineDelay = 1000;
+
+fetchContainer.querySelectorAll('.term-text').forEach((textEl, i) => {
+  const text = textEl.innerText;
+  textEl.innerText = '';
+
+  const chars = text.split('');
+  let delay = 0;
+
+  // Iterate over each character and add to the element's text content with delay
+  chars.forEach((char, j) => {
+    delay = j * 50 + i * lineDelay;
+    setTimeout(() => {
+      textEl.innerText += char;
+    }, delay);
+  });
+});
+
+        </script>
+      
+      </div>
+
   </div>
 </div>
 
-<div id="drag-square1" class="window">
+<div id="drag-square1" class="window ">
   <div class="bar-buttons">
       <div class="min"></div>
       <script>
@@ -151,8 +221,33 @@ myButton1.addEventListener('click', () => {
   </div>
 </div>
 
+<div id="drag-square2" class="terminal">
+  <div class="bar-buttons">
+      <div class="min"></div>
+      <script>
+        const dragSquare3 = document.getElementById('drag-square');
+        const minButton2 = document.querySelector('.min');
+        const termText2 = document.querySelector('term-text');
+        
+        minButton.addEventListener('click', () => {
+          dragSquare2.classList.add('minimized');
+          termText.classList.add('minimized');
+        });
+        </script>
+      <div class="max"></div>
+      <div class="close"></div>
+  </div>
+  <div>
+  <canvas id="myCanvas"></canvas>
+</div>
+<div class="hydra-buttons">
+  <audio controls>
+    <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">
+  </audio> 
+</div>
 
 
+</div>
     
     <script>
         const dragSquare = document.getElementById('drag-square');
@@ -183,6 +278,36 @@ document.addEventListener('mouseup', () => {
 
 
     </script>
+
+<script>
+  const dragSquare4 = document.getElementById('drag-square2');
+let isDragging2 = false;
+let dragOffset2 = { x: 0, y: 0 };
+let initialOffset2 = { x: 0, y: 0 };
+
+dragSquare4.addEventListener('mousedown', (event) => {
+isDragging2 = true;
+initialOffset2.x = dragSquare4.offsetLeft;
+initialOffset2.y = dragSquare4.offsetTop;
+dragOffset2.x = event.clientX;
+dragOffset2.y = event.clientY;
+});
+
+document.addEventListener('mousemove', (event) => {
+if (isDragging2) {
+const x = event.clientX - dragOffset2.x;
+const y = event.clientY - dragOffset2.y;
+dragSquare4.style.left = `${initialOffset2.x + x}px`;
+dragSquare4.style.top = `${initialOffset2.y + y}px`;
+}
+});
+
+document.addEventListener('mouseup', () => {
+isDragging2 = false;
+});
+
+
+</script>
 
 <script>
   const dragSquare1 = document.getElementById('drag-square1');
@@ -241,5 +366,47 @@ isDragging1 = false;
     }
 }
     </script>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+
+// create a new hydra-synth instance
+var hydra = new Hydra({
+  canvas,
+  detectAudio: false,
+  enableStreamCapture: false,
+})
+
+
+
+var r = 0.3;
+var g = 1;
+var b = 1;
+var k = 4;
+var mod = 0;
+
+osc(13,0,1)
+  .kaleid(()=>k)
+  .mask(shape(4,23,1))
+  .modulateRotate(shape(4,0.1,1))
+  .modulateRotate(shape(4,0.1,0.9))
+  .modulateRotate(shape(4,0.1,0.8))
+  .scale(0.3)
+  .add(shape(4,0.2,1).color(()=>r,()=>g,()=>b,0.5))
+  .modulate(
+  osc(6,0,1.5).brightness(-.5)
+  .modulate(noise(10, 0.1).sub(gradient()),1), ()=>mod
+  )
+  .rotate(0,1)
+  .scale(1,()=>window.innerHeight/window.innerWidth)
+  .modulateKaleid(osc(11,0.5,0),50)
+  .scale(0.1,0.3)
+  .modulate(noise(5,0.1))
+  .mult(solid(1,1,0.3))
+  .out()
+
+  
+</script>
+
 </body>
 </html>

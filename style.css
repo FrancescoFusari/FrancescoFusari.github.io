@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vw;
     position: absolute;
-    background-image: url("light.webp");
+    background-color: rgb(91, 21, 157);
     left: 0x;
     background-size: contain;
     margin-top: -40px;
@@ -25,22 +25,16 @@ body {
 }
 
 .topbar {
-    width: 94vw;
+    width: 100vw;
     height: 4vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: 40px;
-    margin-top: 40px;
-    margin-right: 40px;
-    background-color: rgba(0, 0, 0, 0.069);
+    background-color: rgb(0, 0, 0);
     opacity: 100%;
     backdrop-filter: blur(400px);
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(127, 255, 212, 0.328);
-    border-radius: 12px;
+
 }
 
 .logotxt {
@@ -119,10 +113,11 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 30px;
 }
 
 .fetch-ascii {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-right: 40px;
 }
 
@@ -170,19 +165,8 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: self-start;
-    padding: 30px;
-    margin-bottom: 60px;
-    width: 800px;
-    background-color: black;
-    border-style: solid;
-    border-width: 3px;
-    border-color: aquamarine;
-    border-radius: 20px;
     z-index: 1;
+    padding-bottom: 30px;
 }
 
 .terminal.minimized {
@@ -196,18 +180,21 @@ button {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: center;
     justify-content: end;
     border: 0px;
-    border-bottom: 1px;
-    border-style: solid;
-    border-color: rgb(50, 50, 50);
-    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.604);
+    border-radius: 4px;  
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 10px;
+    box-sizing:border-box;
+    cursor: move;
 }
 
 .min {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 99px;
     background-color: orange;
     display: flex;
@@ -217,8 +204,8 @@ button {
 }
 
 .max {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 99px;
     background-color: rgb(38, 160, 38);
     display: flex;
@@ -228,8 +215,8 @@ button {
 }
 
 .close {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 99px;
     background-color: rgb(189, 21, 21);
     display: flex;
@@ -249,6 +236,8 @@ button {
     color: aliceblue;
 }
 
+
+
 .term-text {
     margin-top: 0px;
     font-family: 'Courier New', Courier, monospace;
@@ -260,6 +249,7 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
     color: aquamarine;
+    padding-left: 30px;
 }
 
 
@@ -294,15 +284,24 @@ h3 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: self-start;
-    padding: 30px;
-    width: 800px;
-    background-color: rgba(0, 0, 0, 0.069);
+    width: 50vw;
+    background-color: rgb(3, 17, 170);
     backdrop-filter: blur(20px);
+    border-radius: 4px; 
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
+    resize: both;
+    overflow: auto;
+
+  }
+
+  #drag-square:hover {
     border-style: solid;
     border-width: 2px;
-    border-color: rgba(127, 255, 212, 0.328);
-    border-radius: 20px;
+    border-color: rgba(240, 248, 255, 0.565);
+    border-radius: 6px;
   }
+
+
   
   #drag-square1 {
     position: absolute;
@@ -312,16 +311,27 @@ h3 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: self-start;
-    padding: 30px;
     width: auto;
-    background-color: rgba(0, 0, 0, 0.069);
+    background-color: rgb(3, 17, 170);
     backdrop-filter: blur(20px);
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(127, 255, 212, 0.328);
-    border-radius: 20px;
-  }
+    border-radius: 4px; 
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
+    resize: both;
+    overflow: auto;
+    z-index: 2;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+      }
   
+      #drag-square1:hover {
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgba(240, 248, 255, 0.565);
+        border-radius: 6px;
+      }
+
   .minimized {
     height: 0;
     opacity: 0;
@@ -335,21 +345,19 @@ h3 {
     flex-direction: row;
     row-gap: 40px;
     position: fixed;
-    bottom: 20px;
-    width: auto;
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.069);
+    bottom: 0px;
+    width: 100vw;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
     backdrop-filter: blur(20px);
-    border-style: solid;
-    border-width: 2px;
-    border-color: rgba(127, 255, 212, 0.328);
-    border-radius: 20px;
     padding: 10px;
     padding-left: 30px;
     padding-right: 20px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
   }
+
+ 
 
   .icon {
     display: flex;
@@ -361,15 +369,15 @@ h3 {
     margin-right: 10px;
     transition: all 0.15s ease-in-out;
     padding: 10px;
+    filter: invert();
   }
 
   .icon:hover {
     transform: scale(1.4);
-    backdrop-filter: blur(20px);
   }
 
   .icon:hover {
-    background-color: rgba(240, 248, 255, 0.15); 
+    background-color: rgba(240, 248, 255, 0); 
     cursor: pointer;
   }
 
@@ -380,4 +388,110 @@ h3 {
     margin-top: 5px;
     margin-bottom: 0px;
     font-size: small;
+    display: none;
   }
+
+
+  #drag-square2 {
+    position: absolute;
+    left: 30vw;
+    top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+    width: auto;
+    background-color: rgb(3, 17, 170);
+    backdrop-filter: blur(20px);
+    border-radius: 4px; 
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
+    resize: both;
+    overflow: auto;
+    z-index: 2;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+      }
+  
+      #drag-square2:hover {
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgba(240, 248, 255, 0.565);
+        border-radius: 6px;
+      }
+
+      canvas {
+        position: relative;
+        z-index: 0;
+        width: 356px;
+        height: 200;
+      }
+
+      .hydra-buttons {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 300;
+        color: aliceblue;
+        font-size: 28px;
+      }
+
+
+      .appbar1 {
+        display: flex;
+        flex-direction: row;
+        row-gap: 40px;
+        position: fixed;
+        bottom: 50px;
+        width: 100vw;
+        height: 40px;
+        background-color: transparent;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 20px;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .icon-badge {
+        color: aliceblue;
+        background-color: black;
+        border-radius: 8px;
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        margin-left: 6px;
+      }
+
+.pulsa:hover + .icon-badge {
+    display: block;
+}
+
+.pulsa {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    position: fixed;
+    bottom: 0px;
+}
+
+.mostra-container {
+    display: none;
+    width: 1000px;
+    height: 90px;
+    background-color: green;
+    position: fixed;
+    bottom: 420px;
+}
+
+.pulsa:hover + .mostra-container {
+    display: block;
+}
+
+#homeicobadge {
+    display: none;
+}
+
+#homeico:hover  #homeicobadge {
+    display: block;
+}
