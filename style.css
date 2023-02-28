@@ -454,7 +454,7 @@ h3 {
 
       .icon-badge {
         color: aliceblue;
-        background-color: black;
+        background-color: rgb(54, 98, 207);
         border-radius: 8px;
         padding: 4px;
         padding-left: 8px;
@@ -492,6 +492,6 @@ h3 {
     display: none;
 }
 
-#homeico:hover  #homeicobadge {
+#homeico:hover ~ #homeicobadge {
     display: block;
 }
