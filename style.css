@@ -5,6 +5,8 @@ body {
     margin: 0px;
     display: flex;
     justify-content: center;
+    height: 100%;
+    overflow: hidden;
 }
 
 #my-div {
@@ -14,7 +16,6 @@ body {
     background-color: rgb(91, 21, 157);
     left: 0x;
     background-size: contain;
-    margin-top: -40px;
 }
 
 *:fullscreen
@@ -34,7 +35,9 @@ body {
     background-color: rgb(0, 0, 0);
     opacity: 100%;
     backdrop-filter: blur(400px);
-
+    position: fixed;
+    top: 0px;
+    z-index: 300;
 }
 
 .logotxt {
@@ -455,43 +458,235 @@ h3 {
       .icon-badge {
         color: aliceblue;
         background-color: rgb(54, 98, 207);
-        border-radius: 8px;
+        border-radius: 4px;
         padding: 4px;
         padding-left: 8px;
         padding-right: 8px;
         font-family: 'Courier New', Courier, monospace;
         margin-left: 6px;
+        font-size: x-small;
       }
 
-.pulsa:hover + .icon-badge {
-    display: block;
-}
 
-.pulsa {
-    width: 400px;
-    height: 400px;
-    background-color: red;
-    position: fixed;
-    bottom: 0px;
-}
 
-.mostra-container {
-    display: none;
-    width: 1000px;
-    height: 90px;
-    background-color: green;
-    position: fixed;
-    bottom: 420px;
-}
 
-.pulsa:hover + .mostra-container {
-    display: block;
-}
 
 #homeicobadge {
     display: none;
 }
 
-#homeico:hover ~ #homeicobadge {
+
+#homeico:hover #homeicobadge {
     display: block;
+    position: absolute;
+    bottom: 50px;
+    margin-left: 16px;
 }
+
+#termicobadge {
+    display: none;
+}
+
+
+#termico:hover #termicobadge {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    margin-left: 16px;
+}
+
+.grub-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    z-index: 450;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 5vw;
+    justify-content: baseline;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.grub-content {
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 4px;
+    width: 70%;
+    padding-top: 20px;
+}
+
+.grub-entry {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 200;
+    color: aliceblue;
+    margin: 0px;
+    padding: 8px;
+}
+
+.grub-entry:focus {
+    background-color: white;
+    color: black;
+}
+
+.spacer {
+    height: 400px;
+}
+
+.grub-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: 200;
+    color: aliceblue;
+    margin: 0px;
+}
+
+.subtittle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 200;
+    color: rgba(240, 248, 255, 0.665);
+    margin: 0px;
+    margin-bottom: 60px;
+}
+
+.grub-help {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: 200;
+    color: rgba(240, 248, 255, 0.359);
+}
+
+.grub-help1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.628);
+    font-family: monospace;
+    white-space: pre;
+    overflow: hidden;
+    animation: typing1 10s steps(80, end);
+}
+
+.selected {
+    background-color: brown;
+}
+
+.boot-container {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 500;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.boot-ascii {
+    font-family: monospace;
+    white-space: pre;
+    overflow: hidden;
+    line-height: 10px;
+    opacity: 0;
+    animation: typing 4s steps(60, end) 6s forwards;
+    color: rgba(255, 255, 255, 0.836);
+  }
+  
+  @keyframes typing {
+    0% { opacity: 0; }
+    2% { opacity: 1; }
+    100% { opacity: 1; }
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  
+  @keyframes typing1 {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  .boot-logo {
+    padding: 40px;
+
+  }
+
+  .boot-button-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .boot-button {
+    border-style: solid;
+    border-width: 2px;
+    border-color: aliceblue;
+    color: aliceblue;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: 300;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 8px;
+    margin-right: 10px;
+    opacity: 0;
+    animation: typing2 4s steps(60, end) 8s forwards;
+    animation-timing-function: ease-in-out;
+  }
+
+  .boot-button:hover {
+    background-color: white;
+    color: blue;
+  }
+
+  .boot-button-read {
+    border-style: solid;
+    border-width: 2px;
+    border-color: aliceblue;
+    color: aliceblue;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: 300;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 8px;
+    margin-right: 10px;
+    opacity: 0;
+    animation: typing2 4s steps(60, end) 8s forwards;
+    animation-timing-function: ease-in-out;
+  }
+
+  .boot-button-read:hover {
+    background-color: white;
+    color: blue;
+  }
+
+  @keyframes typing2 {
+    0% { opacity: 0; }
+    2% { opacity: 1; }
+    100% { opacity: 1; }
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  /* Define the CSS class that hides the boot-container */
+.hide {
+    display: none;
+  }
+  

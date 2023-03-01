@@ -25,10 +25,7 @@
 
 </head>
 <body id="element">
-    <div class="back" id="my-div">
-
-    </div>
-<div class="topbar">
+  <div class="topbar">
     <div class="left-panel">
         <p class="logotxt">FF</p>
     </div>
@@ -63,18 +60,25 @@ myButton1.addEventListener('click', () => {
         </script>
     </div>
 </div>
+    <div class="back" id="my-div">
+
+    </div>
+
 
 
 
 <div class="appbar">
 
-  <div class="icon" id="homeico">
+  <div id="homeico" class="icon">
+    
     <img src="home.png" alt="" width="24px" height="24px">
     <p class="icon-text">Home</p>
+    <div id="homeicobadge" class="icon-badge">Home</div>
   </div>
-  <div class="icon" id="termicon">
+  <div class="icon" id="termico">
     <img src="terminal.png" alt="" width="24px" height="24px">
     <p class="icon-text">Terminal</p>
+    <div id="termicobadge" class="icon-badge">Terminal</div>
   </div>
   
   <script>
@@ -96,21 +100,7 @@ myButton1.addEventListener('click', () => {
   </div>
   </div>
 
-  <div class="appbar1">
-    <div class="icon-badge" id="homeicobadge">Home</div>
-    <div class="icon-badge">Skills</div>
-    <div class="icon-badge">Terminal</div>
-    <div class="icon-badge">Contact</div>
-  </div>
-
-<div class="pulsa">
-  mostra
-</div>
-
-<div class="mostra-container">
-  <div class="mostra">ciao</div>
-</div>
-
+  
 <div id="drag-square" class="terminal">
     <div class="bar-buttons">
         <div class="min"></div>
@@ -152,7 +142,7 @@ function typeWriter() {
   if (i < lines.length) {
     ascii.innerHTML += lines[i] + '<br>';
     i++;
-    setTimeout(typeWriter, 200);
+    setTimeout(typeWriter, 400);
   }
 }
 
@@ -175,7 +165,7 @@ typeWriter();
       const fetchContainer = document.querySelector('.fetch');
 
 // Delay between lines
-const lineDelay = 1000;
+const lineDelay = 900;
 
 fetchContainer.querySelectorAll('.term-text').forEach((textEl, i) => {
   const text = textEl.innerText;
@@ -407,6 +397,147 @@ osc(13,0,1)
 
   
 </script>
+
+
+<div class="grub-container">
+    <h1 class="grub-title">FNU FRUB 2.038329732</h1>
+    <P class="subtittle">You are about to enter:</P>
+    <div class="grub-content">
+        <p class="grub-entry">Frindows 0.2</p>
+        <p class="grub-entry">Advanced options for Frindows 0.2</p>
+        <p class="grub-entry">Memory test (fratest25+)</p>
+        <p class="grub-entry">Memory test (fratest25+, easter egg, here)</p>
+        <div class="spacer"></div>
+        <script>
+const entries = document.querySelectorAll('.grub-entry');
+let selectedIndex = 0;
+
+// highlight the selected entry
+function highlightSelected() {
+    entries.forEach((entry, index) => {
+        if (index === selectedIndex) {
+            entry.classList.add('selected');
+        } else {
+            entry.classList.remove('selected');
+        }
+    });
+}
+
+// select the next entry
+function selectNext() {
+    selectedIndex++;
+    if (selectedIndex >= entries.length) {
+        selectedIndex = 0;
+    }
+    highlightSelected();
+}
+
+// select the previous entry
+function selectPrevious() {
+    selectedIndex--;
+    if (selectedIndex < 0) {
+        selectedIndex = entries.length - 1;
+    }
+    highlightSelected();
+}
+
+// hide the grub-container and show the selected entry
+function hideContainer() {
+    const container = document.querySelector('.grub-container');
+    container.style.display = 'none';
+    entries[selectedIndex].classList.add('selected');
+}
+
+// handle key press event
+document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowUp') {
+        selectPrevious();
+    } else if (event.key === 'ArrowDown') {
+        selectNext();
+    } else if (event.key === 'Enter') {
+        hideContainer();
+    }
+});
+
+// handle mouse hover event
+entries.forEach((entry, index) => {
+    entry.addEventListener('mouseover', () => {
+        selectedIndex = index;
+        highlightSelected();
+    });
+});
+
+// handle mouse click event
+entries.forEach((entry, index) => {
+    entry.addEventListener('click', () => {
+        selectedIndex = index;
+        hideContainer();
+    });
+});
+
+// select the first entry on page load
+highlightSelected();
+
+
+</script>
+    </div>
+    <p class="grub-help">Use the arrow keys to select which entry is highlightened. <br>Press enter to boot the selected OS, 'e' to edit the <br> commands before booting, or 'c' for a command-line.</p>
+</div>
+
+<div class="boot-container">
+  <div class="boot-logo">
+    <p class="grub-help1">System is booting, please wait..............</p>
+
+    <p class="boot-ascii">
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________/\\\\\\\\\\\\\\\____________/\\\\\\\\\\\\\\\____________________________________ <br> 
+____________________________________\/\\\///////////____________\/\\\///////////____________________________________ <br>
+_____________________________________\/\\\_______________________\/\\\______________________________________________ <br>
+______________________________________\/\\\\\\\\\\\_______________\/\\\\\\\\\\\_____________________________________ <br>
+_______________________________________\/\\\///////________________\/\\\///////_____________________________________ <br>   
+________________________________________\/\\\_______________________\/\\\___________________________________________ <br>  
+_________________________________________\/\\\_______________________\/\\\__________________________________________ <br>
+__________________________________________\/\\\_______________________\/\\\_________________________________________ <br>
+___________________________________________\///________________________\///_________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+____________________________________________________________________________________________________________________ <br>
+    </p>
+    <div class="boot-button-cont">
+      <div class="boot-button">Select System</div>
+      <div class="boot-button-read">README</div>
+
+
+      <script>// Get the boot-button element
+        const bootButton = document.querySelector('.boot-button');
+        
+        // Get the boot-container element
+        const bootContainer = document.querySelector('.boot-container');
+        
+        // Add a click event listener to the boot-button
+        bootButton.addEventListener('click', () => {
+          // Toggle the hide class on the boot-container
+          bootContainer.classList.toggle('hide');
+        });
+        </script>
+    </div>
+  </div>
+ 
+  
+
+</div>
 
 </body>
 </html>
