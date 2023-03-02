@@ -82,7 +82,7 @@ myButton1.addEventListener('click', () => {
   </div>
   
   <script>
-    const TerminalIcon = document.getElementById('termicon');
+    const TerminalIcon = document.getElementById('termico');
     
     TerminalIcon.addEventListener('click', () => {
       dragSquare2.classList.remove('minimized');
@@ -90,13 +90,15 @@ myButton1.addEventListener('click', () => {
     });
     </script>
   
-  <div class="icon">
+  <div id="contico" class="icon">
     <img src="contact.png" alt="" width="24px" height="24px">
     <p class="icon-text">Contact</p>
+    <div id="conticobadge" class="icon-badge">Contact</div>
   </div>
-  <div class="icon">
+  <div id="skillico" class="icon">
     <img src="pencil.png" alt="" width="24px" height="24px">
     <p class="icon-text">Skills</p>
+    <div id="skillicobadge" class="icon-badge">Skills</div>
   </div>
   </div>
 
@@ -238,6 +240,25 @@ fetchContainer.querySelectorAll('.term-text').forEach((textEl, i) => {
 
 
 </div>
+
+<div id="drag-square3" class="window portfolio">
+  <div class="bar-buttons">
+      <div class="min"></div>
+      <script>
+        const dragSquare5 = document.getElementById('drag-square3');
+        const minButton5 = document.querySelector('.min');
+        const termText5 = document.querySelector('term-text');
+
+        minButton5.addEventListener('click', () => {
+            dragSquare5.classList.add('minimized');
+            termText5.classList.add('minimized');
+        });
+        </script>
+      <div class="max"></div>
+      <div class="close"></div>
+  </div>
+    
+</div>
     
     <script>
         const dragSquare = document.getElementById('drag-square');
@@ -328,6 +349,37 @@ isDragging1 = false;
 
 
 </script>
+
+
+    <script>
+        const dragSquare6 = document.getElementById('drag-square3');
+let isDragging6 = false;
+let dragOffset6 = { x: 0, y: 0 };
+let initialOffset6 = { x: 0, y: 0 };
+
+dragSquare6.addEventListener('mousedown', (event) => {
+    isDragging6 = true;
+    initialOffset6.x = dragSquare6.offsetLeft;
+    initialOffset6.y = dragSquare6.offsetTop;
+    dragOffset6.x = event.clientX;
+    dragOffset6.y = event.clientY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (isDragging6) {
+        const x = event.clientX - dragOffset6.x;
+        const y = event.clientY - dragOffset6.y;
+        dragSquare6.style.left = `${initialOffset6.x + x}px`;
+        dragSquare6.style.top = `${initialOffset6.y + y}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging6 = false;
+});
+
+
+    </script>
 
 
     <script>
@@ -486,7 +538,9 @@ highlightSelected();
 
 <div class="boot-container">
   <div class="boot-logo">
-    <p class="grub-help1">System is booting, please wait..............</p>
+    <p class="grub-help1">Welcome, you are about to enter Francesco's space on the Web</p>
+    <p class="grub-help2">Press "Select System" to continue or "README" to show desription & guidance.</p>
+
 
     <p class="boot-ascii">
 ____________________________________________________________________________________________________________________ <br>
