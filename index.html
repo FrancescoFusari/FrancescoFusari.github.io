@@ -1,158 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Disabling cache during development -->
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
-    <title>Firefox Startpage</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/hydra-synth"></script>
-    <script src="/script.js" defer></script>
-    
+  <!-- Disabling cache during development -->
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <title>Firefox Startpage</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/hydra-synth"></script>
+  <script src="/script.js" defer></script>
 
-<script>
+
+  <script>
     fetch('https://api.ipdata.co?api-key=73aad7f261cb893df8bf7c7ba0f85cb32cda02512f9610b47666ab18')
-.then(response => response.json())
-.then(data => {
-  document.querySelector('#city').innerHTML = `${data.city}`;
-});
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('#city').innerHTML = `${data.city}`;
+      });
   </script>
 
 </head>
+
 <body id="element">
   <div class="topbar">
     <div class="left-panel">
-        <p class="logotxt">FF</p>
+      <p class="logotxt">FF</p>
     </div>
     <div class="center-panel">
-        <p id="city"></p>
-        <p><span id="datetime"></span></p>
+      <p id="city"></p>
+      <p><span id="datetime"></span></p>
 
-<script>
-var dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleString();
-</script>
+      <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+      </script>
     </div>
     <div class="right-panel">
-        <input type="button" class="button1" value="F11" onclick="toggleFullScreen(document.body)">
-        <button class="button1 small" id="my-button"> <img src="moon.png" alt="" srcset="" width="16px" height="16px"></button>
-        <script>
-          const myDiv = document.getElementById('my-div');
-const myButton = document.getElementById('my-button');
+      <input type="button" class="button1" value="F11" onclick="toggleFullScreen(document.body)">
+      <button class="button1 small" id="my-button"> <img src="moon.png" alt="" srcset="" width="16px"
+          height="16px"></button>
+      <script>
+        const myDiv = document.getElementById('my-div');
+        const myButton = document.getElementById('my-button');
 
-myButton.addEventListener('click', () => {
-  myDiv.style.backgroundImage = "url('dark.jpg')";
-});
-        </script>
-        <button class="button1 small" id="my-button1"> <img src="sun.png" alt="" srcset="" width="16px" height="16px"></button>
-        <script>
-          const myDiv1 = document.getElementById('my-div');
-const myButton1 = document.getElementById('my-button1');
+        myButton.addEventListener('click', () => {
+          myDiv.style.backgroundImage = "url('dark.jpg')";
+        });
+      </script>
+      <button class="button1 small" id="my-button1"> <img src="sun.png" alt="" srcset="" width="16px"
+          height="16px"></button>
+      <script>
+        const myDiv1 = document.getElementById('my-div');
+        const myButton1 = document.getElementById('my-button1');
 
-myButton1.addEventListener('click', () => {
-  myDiv1.style.backgroundImage = "url('light.webp')";
-});
-        </script>
+        myButton1.addEventListener('click', () => {
+          myDiv1.style.backgroundImage = "url('light.webp')";
+        });
+      </script>
     </div>
-</div>
-    <div class="back" id="my-div">
+  </div>
+  <div class="back" id="my-div">
 
+  </div>
+
+
+
+
+  <div class="appbar">
+
+    <div id="homeico" class="icon">
+
+      <img src="home.png" alt="" width="24px" height="24px">
+      <p class="icon-text">Home</p>
+      <div id="homeicobadge" class="icon-badge">Home</div>
     </div>
+    <script>
+      const HomeIcon = document.getElementById('homeico');
 
-
-
-
-<div class="appbar">
-
-  <div id="homeico" class="icon">
-    
-    <img src="home.png" alt="" width="24px" height="24px">
-    <p class="icon-text">Home</p>
-    <div id="homeicobadge" class="icon-badge">Home</div>
-  </div>
-  <div class="icon" id="termico">
-    <img src="terminal.png" alt="" width="24px" height="24px">
-    <p class="icon-text">Terminal</p>
-    <div id="termicobadge" class="icon-badge">Terminal</div>
-  </div>
-  
-  <script>
-    const TerminalIcon = document.getElementById('termico');
-    
-    TerminalIcon.addEventListener('click', () => {
-      dragSquare2.classList.remove('minimized');
-      termText.classList.remove('minimized');
-    });
+      HomeIcon.addEventListener('click', () => {
+        dragSquare.classList.remove('minimized');
+        dragSquare1.classList.remove('minimized');
+        dragSquare2.classList.remove('minimized');
+        dragSquare3.classList.remove('minimized');
+        termText.classList.remove('minimized');
+      });
     </script>
-  
-  <div id="contico" class="icon">
-    <img src="contact.png" alt="" width="24px" height="24px">
-    <p class="icon-text">Contact</p>
-    <div id="conticobadge" class="icon-badge">Contact</div>
-  </div>
-  <div id="skillico" class="icon">
-    <img src="pencil.png" alt="" width="24px" height="24px">
-    <p class="icon-text">Skills</p>
-    <div id="skillicobadge" class="icon-badge">Skills</div>
-  </div>
+    <div class="icon" id="termico">
+      <img src="terminal.png" alt="" width="24px" height="24px">
+      <p class="icon-text">Terminal</p>
+      <div id="termicobadge" class="icon-badge">Terminal</div>
+    </div>
+
+    <script>
+      const TerminalIcon = document.getElementById('termico');
+
+      TerminalIcon.addEventListener('click', () => {
+        dragSquare2.classList.remove('minimized');
+        termText.classList.remove('minimized');
+      });
+    </script>
+
+    <div id="contico" class="icon">
+      <img src="contact.png" alt="" width="24px" height="24px">
+      <p class="icon-text">Contact</p>
+      <div id="conticobadge" class="icon-badge">Contact</div>
+    </div>
+    <div id="skillico" class="icon">
+      <img src="pencil.png" alt="" width="24px" height="24px">
+      <p class="icon-text">Skills</p>
+      <div id="skillicobadge" class="icon-badge">Skills</div>
+    </div>
   </div>
 
-  
-<div id="drag-square" class="terminal">
+
+  <div id="drag-square" class="terminal">
     <div class="bar-buttons">
-        <div class="min"></div>
-        <div class="max"></div>
-        <div class="close"></div>
+      <div class="min" id="min"></div>
+      <script>
+        const dragSquare = document.getElementById('drag-square');
+        const minButton = document.getElementById('min');
+        const termText = document.querySelector('term-text');
+
+        minButton.addEventListener('click', () => {
+          dragSquare.classList.add('minimized');
+          termText.classList.add('minimized');
+        });
+      </script>
+      <div class="max"></div>
+      <div class="close"></div>
     </div>
     <p class="input-term">francesco@surface-laptop> $ neofetch</p>
     <div class="fetch-container">
       <div class="fetch-ascii">
         <p class="ascii">
-          ___/\\\\\\\\\\\\\\\_________       <br> 
-          ___\/\\\///////////_________       <br>
-          ____\/\\\___________________      <br>
-          _____\/\\\\\\\\\\\__________    <br>
-          ______\/\\\///////__________ <br>   
-          _______\/\\\________________ <br>  
-          ________\/\\\_______________  <br>
+          ___/\\\\\\\\\\\\\\\_________ <br>
+          ___\/\\\///////////_________ <br>
+          ____\/\\\___________________ <br>
+          _____\/\\\\\\\\\\\__________ <br>
+          ______\/\\\///////__________ <br>
+          _______\/\\\________________ <br>
+          ________\/\\\_______________ <br>
           _________\/\\\______________ <br>
           __________\///______________ <br>
           <br>
 
-          ___/\\\\\\\\\\\\\\\_________       <br> 
-          ___\/\\\///////////_________       <br>
-          ____\/\\\___________________      <br>
-          _____\/\\\\\\\\\\\__________    <br>
-          ______\/\\\///////__________ <br>   
-          _______\/\\\________________ <br>  
-          ________\/\\\_______________  <br>
+          ___/\\\\\\\\\\\\\\\_________ <br>
+          ___\/\\\///////////_________ <br>
+          ____\/\\\___________________ <br>
+          _____\/\\\\\\\\\\\__________ <br>
+          ______\/\\\///////__________ <br>
+          _______\/\\\________________ <br>
+          ________\/\\\_______________ <br>
           _________\/\\\______________ <br>
           __________\///______________ <br>
         </p>
         <script>
           const ascii = document.querySelector('.ascii');
-const lines = ascii.innerHTML.split('<br>');
-ascii.innerHTML = '';
+          const lines = ascii.innerHTML.split('<br>');
+          ascii.innerHTML = '';
 
-let i = 0;
-function typeWriter() {
-  if (i < lines.length) {
-    ascii.innerHTML += lines[i] + '<br>';
-    i++;
-    setTimeout(typeWriter, 400);
-  }
-}
+          let i = 0;
+          function typeWriter() {
+            if (i < lines.length) {
+              ascii.innerHTML += lines[i] + '<br>';
+              i++;
+              setTimeout(typeWriter, 400);
+            }
+          }
 
-typeWriter();
+          typeWriter();
 
         </script>
       </div>
-    <div class="fetch">
+      <div class="fetch">
         <p class="term-text"> <span class="info">OS:</span> Crystal Linux </p>
         <p class="term-text"> <span class="info">Host:</span> Surface Laptop 3 124I:00036T:000M:03</p>
         <p class="term-text"><span class="info">Host:</span> 6.1.10-arch1-1</p>
@@ -161,437 +186,501 @@ typeWriter();
         <p class="term-text"><span class="info">Host:</span> bash 5.1.16</p>
         <p class="term-text"><span class="info">Host:</span> 2256x1504</p>
         <p class="term-text"><span class="info">Host:</span> GNOME 43.2 (Wayland)</p>
-        <p class="term-text vert-last" ><span class="info">Host:</span> Intel i5-1035G7 (8) @ 3.700GHz</p>
-    
-      <script>
-      const fetchContainer = document.querySelector('.fetch');
+        <p class="term-text vert-last"><span class="info">Host:</span> Intel i5-1035G7 (8) @ 3.700GHz</p>
 
-// Delay between lines
-const lineDelay = 900;
+        <script>
+          const fetchContainer = document.querySelector('.fetch');
 
-fetchContainer.querySelectorAll('.term-text').forEach((textEl, i) => {
-  const text = textEl.innerText;
-  textEl.innerText = '';
+          // Delay between lines
+          const lineDelay = 900;
 
-  const chars = text.split('');
-  let delay = 0;
+          fetchContainer.querySelectorAll('.term-text').forEach((textEl, i) => {
+            const text = textEl.innerText;
+            textEl.innerText = '';
 
-  // Iterate over each character and add to the element's text content with delay
-  chars.forEach((char, j) => {
-    delay = j * 50 + i * lineDelay;
-    setTimeout(() => {
-      textEl.innerText += char;
-    }, delay);
-  });
-});
+            const chars = text.split('');
+            let delay = 0;
+
+            // Iterate over each character and add to the element's text content with delay
+            chars.forEach((char, j) => {
+              delay = j * 50 + i * lineDelay;
+              setTimeout(() => {
+                textEl.innerText += char;
+              }, delay);
+            });
+          });
 
         </script>
-      
+
       </div>
 
-  </div>
-</div>
-
-<div id="drag-square1" class="window ">
-  <div class="bar-buttons">
-      <div class="min"></div>
-      <script>
-        const dragSquare2 = document.getElementById('drag-square');
-        const minButton = document.querySelector('.min');
-        const termText = document.querySelector('term-text');
-        
-        minButton.addEventListener('click', () => {
-          dragSquare2.classList.add('minimized');
-          termText.classList.add('minimized');
-        });
-        </script>
-      <div class="max"></div>
-      <div class="close"></div>
-  </div>
-  <div class="skills">
-    <img src="dev.png" alt="" srcset="">
-  </div>
-</div>
-
-<div id="drag-square2" class="terminal">
-  <div class="bar-buttons">
-      <div class="min"></div>
-      <script>
-        const dragSquare3 = document.getElementById('drag-square');
-        const minButton2 = document.querySelector('.min');
-        const termText2 = document.querySelector('term-text');
-        
-        minButton.addEventListener('click', () => {
-          dragSquare2.classList.add('minimized');
-          termText.classList.add('minimized');
-        });
-        </script>
-      <div class="max"></div>
-      <div class="close"></div>
-  </div>
-  <div>
-  <canvas id="myCanvas"></canvas>
-</div>
-<div class="hydra-buttons">
-  <audio controls>
-    <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">
-  </audio> 
-</div>
-
-
-</div>
-
-<div id="drag-square3" class="window portfolio">
-  <div class="bar-buttons">
-      <div class="min"></div>
-      <script>
-        const dragSquare5 = document.getElementById('drag-square3');
-        const minButton5 = document.querySelector('.min');
-        const termText5 = document.querySelector('term-text');
-
-        minButton5.addEventListener('click', () => {
-            dragSquare5.classList.add('minimized');
-            termText5.classList.add('minimized');
-        });
-        </script>
-      <div class="max"></div>
-      <div class="close"></div>
-  </div>
-    
-</div>
-    
+    </div>
     <script>
-        const dragSquare = document.getElementById('drag-square');
-let isDragging = false;
-let dragOffset = { x: 0, y: 0 };
-let initialOffset = { x: 0, y: 0 };
-
-dragSquare.addEventListener('mousedown', (event) => {
-  isDragging = true;
-  initialOffset.x = dragSquare.offsetLeft;
-  initialOffset.y = dragSquare.offsetTop;
-  dragOffset.x = event.clientX;
-  dragOffset.y = event.clientY;
-});
-
-document.addEventListener('mousemove', (event) => {
-  if (isDragging) {
-    const x = event.clientX - dragOffset.x;
-    const y = event.clientY - dragOffset.y;
-    dragSquare.style.left = `${initialOffset.x + x}px`;
-    dragSquare.style.top = `${initialOffset.y + y}px`;
-  }
-});
-
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-});
-
-
-    </script>
-
-<script>
-  const dragSquare4 = document.getElementById('drag-square2');
-let isDragging2 = false;
-let dragOffset2 = { x: 0, y: 0 };
-let initialOffset2 = { x: 0, y: 0 };
-
-dragSquare4.addEventListener('mousedown', (event) => {
-isDragging2 = true;
-initialOffset2.x = dragSquare4.offsetLeft;
-initialOffset2.y = dragSquare4.offsetTop;
-dragOffset2.x = event.clientX;
-dragOffset2.y = event.clientY;
-});
-
-document.addEventListener('mousemove', (event) => {
-if (isDragging2) {
-const x = event.clientX - dragOffset2.x;
-const y = event.clientY - dragOffset2.y;
-dragSquare4.style.left = `${initialOffset2.x + x}px`;
-dragSquare4.style.top = `${initialOffset2.y + y}px`;
-}
-});
-
-document.addEventListener('mouseup', () => {
-isDragging2 = false;
-});
-
-
-</script>
-
-<script>
-  const dragSquare1 = document.getElementById('drag-square1');
-let isDragging1 = false;
-let dragOffset1 = { x: 0, y: 0 };
-let initialOffset1 = { x: 0, y: 0 };
-
-dragSquare1.addEventListener('mousedown', (event) => {
-isDragging1 = true;
-initialOffset1.x = dragSquare1.offsetLeft;
-initialOffset1.y = dragSquare1.offsetTop;
-dragOffset1.x = event.clientX;
-dragOffset1.y = event.clientY;
-});
-
-document.addEventListener('mousemove', (event) => {
-if (isDragging1) {
-const x = event.clientX - dragOffset1.x;
-const y = event.clientY - dragOffset1.y;
-dragSquare1.style.left = `${initialOffset1.x + x}px`;
-dragSquare1.style.top = `${initialOffset1.y + y}px`;
-}
-});
-
-document.addEventListener('mouseup', () => {
-isDragging1 = false;
-});
-
-
-</script>
-
-
-    <script>
-        const dragSquare6 = document.getElementById('drag-square3');
-let isDragging6 = false;
-let dragOffset6 = { x: 0, y: 0 };
-let initialOffset6 = { x: 0, y: 0 };
-
-dragSquare6.addEventListener('mousedown', (event) => {
-    isDragging6 = true;
-    initialOffset6.x = dragSquare6.offsetLeft;
-    initialOffset6.y = dragSquare6.offsetTop;
-    dragOffset6.x = event.clientX;
-    dragOffset6.y = event.clientY;
-});
-
-document.addEventListener('mousemove', (event) => {
-    if (isDragging6) {
-        const x = event.clientX - dragOffset6.x;
-        const y = event.clientY - dragOffset6.y;
-        dragSquare6.style.left = `${initialOffset6.x + x}px`;
-        dragSquare6.style.top = `${initialOffset6.y + y}px`;
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging6 = false;
-});
-
-
-    </script>
-
-
-    <script>
-        function toggleFullScreen(elem) {
-    // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-    if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
-        if (elem.requestFullScreen) {
-            elem.requestFullScreen();
-        } else if (elem.mozRequestFullScreen) {
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullScreen) {
-            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (elem.msRequestFullscreen) {
-            elem.msRequestFullscreen();
+ 
+      let isDragging = false;
+      let dragOffset = { x: 0, y: 0 };
+      let initialOffset = { x: 0, y: 0 };
+  
+      dragSquare.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        initialOffset.x = dragSquare.offsetLeft;
+        initialOffset.y = dragSquare.offsetTop;
+        dragOffset.x = event.clientX;
+        dragOffset.y = event.clientY;
+      });
+  
+      document.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+          const x = event.clientX - dragOffset.x;
+          const y = event.clientY - dragOffset.y;
+          dragSquare.style.left = `${initialOffset.x + x}px`;
+          dragSquare.style.top = `${initialOffset.y + y}px`;
         }
-    } else {
-        if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-    }
-}
+      });
+  
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+  
+  
     </script>
+  </div>
+  
 
-<script>
-  const canvas = document.getElementById("myCanvas");
+  <div id="drag-square1" class="window ">
+    <div class="bar-buttons">
+      <div class="min" id="min1"></div>
+      <script>
+        const dragSquare1 = document.getElementById('drag-square1');
+        const minButton1 = document.getElementById('min1');
 
-// create a new hydra-synth instance
-var hydra = new Hydra({
-  canvas,
-  detectAudio: false,
-  enableStreamCapture: false,
-})
+        minButton1.addEventListener('click', () => {
+          dragSquare1.classList.add('minimized');
+        });
+      </script>
+      <div class="max"></div>
+      <div class="close"></div>
+    </div>
+    <div class="skills">
+      <img src="dev.png" alt="" srcset="">
+    </div>
+    <script>
+      let isDragging1 = false;
+      let dragOffset1 = { x: 0, y: 0 };
+      let initialOffset1 = { x: 0, y: 0 };
+  
+      dragSquare1.addEventListener('mousedown', (event) => {
+        isDragging1 = true;
+        initialOffset1.x = dragSquare1.offsetLeft;
+        initialOffset1.y = dragSquare1.offsetTop;
+        dragOffset1.x = event.clientX;
+        dragOffset1.y = event.clientY;
+      });
+  
+      document.addEventListener('mousemove', (event) => {
+        if (isDragging1) {
+          const x = event.clientX - dragOffset1.x;
+          const y = event.clientY - dragOffset1.y;
+          dragSquare1.style.left = `${initialOffset1.x + x}px`;
+          dragSquare1.style.top = `${initialOffset1.y + y}px`;
+        }
+      });
+  
+      document.addEventListener('mouseup', () => {
+        isDragging1 = false;
+      });
+  
+  
+    </script>
+  </div>
 
+  <div id="drag-square2" class="terminal">
+    <div class="bar-buttons">
+      <div class="min" id="min2"></div>
+      <script>
+        const dragSquare2 = document.getElementById('drag-square2');
+        const minButton2 = document.getElementById('min2');
 
+        minButton2.addEventListener('click', () => {
+          dragSquare2.classList.add('minimized');
+        });
+      </script>
+      <div class="max"></div>
+      <div class="close"></div>
+    </div>
+    <div>
+      <canvas id="myCanvas"></canvas>
+    </div>
+    <div class="hydra-buttons">
+      <audio controls>
+        <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"
+          type="audio/mp3">
+      </audio>
+    </div>
+    <script>
+      let isDragging2 = false;
+      let dragOffset2 = { x: 0, y: 0 };
+      let initialOffset2 = { x: 0, y: 0 };
+  
+      dragSquare2.addEventListener('mousedown', (event) => {
+        isDragging2 = true;
+        initialOffset2.x = dragSquare4.offsetLeft;
+        initialOffset2.y = dragSquare4.offsetTop;
+        dragOffset2.x = event.clientX;
+        dragOffset2.y = event.clientY;
+      });
+  
+      document.addEventListener('mousemove', (event) => {
+        if (isDragging2) {
+          const x = event.clientX - dragOffset2.x;
+          const y = event.clientY - dragOffset2.y;
+          dragSquare2.style.left = `${initialOffset2.x + x}px`;
+          dragSquare2.style.top = `${initialOffset2.y + y}px`;
+        }
+      });
+  
+      document.addEventListener('mouseup', () => {
+        isDragging2 = false;
+      });
+  
+  
+    </script>
+  </div>
 
-var r = 0.3;
-var g = 1;
-var b = 1;
-var k = 4;
-var mod = 0;
+  <div id="drag-square3" class="window portfolio">
+    <div class="bar-buttons">
+      <div class="min" id="min3"></div>
+      <script>
+        const dragSquare3 = document.getElementById('drag-square3');
+        const minButton3 = document.getElementById('min3');
 
-osc(13,0,1)
-  .kaleid(()=>k)
-  .mask(shape(4,23,1))
-  .modulateRotate(shape(4,0.1,1))
-  .modulateRotate(shape(4,0.1,0.9))
-  .modulateRotate(shape(4,0.1,0.8))
-  .scale(0.3)
-  .add(shape(4,0.2,1).color(()=>r,()=>g,()=>b,0.5))
-  .modulate(
-  osc(6,0,1.5).brightness(-.5)
-  .modulate(noise(10, 0.1).sub(gradient()),1), ()=>mod
-  )
-  .rotate(0,1)
-  .scale(1,()=>window.innerHeight/window.innerWidth)
-  .modulateKaleid(osc(11,0.5,0),50)
-  .scale(0.1,0.3)
-  .modulate(noise(5,0.1))
-  .mult(solid(1,1,0.3))
-  .out()
+        minButton3.addEventListener('click', () => {
+          dragSquare3.classList.add('minimized');
+        });
+      </script>
+      <div class="max"></div>
+      <div class="close"></div>
+    </div>
+    <div class="portfolio-bar">
+      <div class="toolbar">
+        <p class="toolbar-entry">File</p>
+        <p class="toolbar-entry">Edit</p>
+        <p class="toolbar-entry">View</p>
+        <p class="toolbar-entry">Search</p>
+        <p class="toolbar-entry">Help</p>
+      </div>
+      <div class="file-navigation">
+        <div class="file-nav-icons">
+          <div class="file-nav-icon">
+            <img src="angle-left.png" alt="" width="24px">
+            <p class="file-nav-icon-text"></p>
+          </div>
+          <div class="file-nav-icon">
+            <img src="angle-right.png" alt="" width="24px">
+            <p class="file-nav-icon-text"></p>
+          </div>
+          <div class="file-nav-icon">
+            <img src="home-file.png" alt="" width="24px">
+            <p class="file-nav-icon-text"></p>
+          </div>
+        </div>
+        <div class="file-nav-bar">
+          <p class="file-path">/home/francesco/dev</p>
+          <img src="refresh.png" alt="" width="24px" height="24px">
+        </div>
+      </div>
+    </div>
+    <div class="file-view-container">
+      <div class="sidebar">
+        <p class="sidebar-title">Devices</p>
+        <div class="sidebar-entry">
+          <img src="hdd.png" alt="" width="24px" height="24px">
+          <p class="sidebar-entry-text">File System</p>
+        </div>
+        <p class="sidebar-title">Locations</p>
+        <div class="sidebar-entry">
+          <img src="folder.png" alt="" width="24px" height="24px">
+          <p class="sidebar-entry-text">Desktop</p>
+        </div>
+        <div class="sidebar-entry">
+          <img src="folder.png" alt="" width="24px" height="24px">
+          <p class="sidebar-entry-text">Downloads</p>
+        </div>
+        <div class="sidebar-entry">
+          <img src="folder.png" alt="" width="24px" height="24px">
+          <p class="sidebar-entry-text">Documets</p>
+        </div>
+      </div>
+      <div class="file-view"></div>
+    </div>
+    <script>
+      let isDragging3 = false;
+      let dragOffset3 = { x: 0, y: 0 };
+      let initialOffset3 = { x: 0, y: 0 };
+  
+      dragSquare3.addEventListener('mousedown', (event) => {
+        isDragging3 = true;
+        initialOffset3.x = dragSquare3.offsetLeft;
+        initialOffset3.y = dragSquare3.offsetTop;
+        dragOffset3.x = event.clientX;
+        dragOffset3.y = event.clientY;
+      });
+  
+      document.addEventListener('mousemove', (event) => {
+        if (isDragging3) {
+          const x = event.clientX - dragOffset3.x;
+          const y = event.clientY - dragOffset3.y;
+          dragSquare3.style.left = `${initialOffset3.x + x}px`;
+          dragSquare3.style.top = `${initialOffset3.y + y}px`;
+        }
+      });
+  
+      document.addEventListener('mouseup', () => {
+        isDragging3 = false;
+      });
+  
+  
+    </script>
+  </div>
 
   
-</script>
+  <script>
+    function toggleFullScreen(elem) {
+      // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+      if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+          elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+          elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        }
+      } else {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    }
+  </script>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+
+    // create a new hydra-synth instance
+    var hydra = new Hydra({
+      canvas,
+      detectAudio: false,
+      enableStreamCapture: false,
+    })
 
 
-<div class="grub-container">
+
+    var r = 0.3;
+    var g = 1;
+    var b = 1;
+    var k = 4;
+    var mod = 0;
+
+    osc(13, 0, 1)
+      .kaleid(() => k)
+      .mask(shape(4, 23, 1))
+      .modulateRotate(shape(4, 0.1, 1))
+      .modulateRotate(shape(4, 0.1, 0.9))
+      .modulateRotate(shape(4, 0.1, 0.8))
+      .scale(0.3)
+      .add(shape(4, 0.2, 1).color(() => r, () => g, () => b, 0.5))
+      .modulate(
+        osc(6, 0, 1.5).brightness(-.5)
+          .modulate(noise(10, 0.1).sub(gradient()), 1), () => mod
+      )
+      .rotate(0, 1)
+      .scale(1, () => window.innerHeight / window.innerWidth)
+      .modulateKaleid(osc(11, 0.5, 0), 50)
+      .scale(0.1, 0.3)
+      .modulate(noise(5, 0.1))
+      .mult(solid(1, 1, 0.3))
+      .out()
+
+
+  </script>
+
+
+  <div class="grub-container">
     <h1 class="grub-title">FNU FRUB 2.038329732</h1>
     <P class="subtittle">You are about to enter:</P>
     <div class="grub-content">
-        <p class="grub-entry">Frindows 0.2</p>
-        <p class="grub-entry">Advanced options for Frindows 0.2</p>
-        <p class="grub-entry">Memory test (fratest25+)</p>
-        <p class="grub-entry">Memory test (fratest25+, easter egg, here)</p>
-        <div class="spacer"></div>
-        <script>
-const entries = document.querySelectorAll('.grub-entry');
-let selectedIndex = 0;
+      <p class="grub-entry">Frindows 0.2</p>
+      <p class="grub-entry">Advanced options for Frindows 0.2</p>
+      <p class="grub-entry">Memory test (fratest25+)</p>
+      <p class="grub-entry">Memory test (fratest25+, easter egg, here)</p>
+      <div class="spacer"></div>
+      <script>
+        const entries = document.querySelectorAll('.grub-entry');
+        let selectedIndex = 0;
 
-// highlight the selected entry
-function highlightSelected() {
-    entries.forEach((entry, index) => {
-        if (index === selectedIndex) {
-            entry.classList.add('selected');
-        } else {
-            entry.classList.remove('selected');
+        // highlight the selected entry
+        function highlightSelected() {
+          entries.forEach((entry, index) => {
+            if (index === selectedIndex) {
+              entry.classList.add('selected');
+            } else {
+              entry.classList.remove('selected');
+            }
+          });
         }
-    });
-}
 
-// select the next entry
-function selectNext() {
-    selectedIndex++;
-    if (selectedIndex >= entries.length) {
-        selectedIndex = 0;
-    }
-    highlightSelected();
-}
+        // select the next entry
+        function selectNext() {
+          selectedIndex++;
+          if (selectedIndex >= entries.length) {
+            selectedIndex = 0;
+          }
+          highlightSelected();
+        }
 
-// select the previous entry
-function selectPrevious() {
-    selectedIndex--;
-    if (selectedIndex < 0) {
-        selectedIndex = entries.length - 1;
-    }
-    highlightSelected();
-}
+        // select the previous entry
+        function selectPrevious() {
+          selectedIndex--;
+          if (selectedIndex < 0) {
+            selectedIndex = entries.length - 1;
+          }
+          highlightSelected();
+        }
 
-// hide the grub-container and show the selected entry
-function hideContainer() {
-    const container = document.querySelector('.grub-container');
-    container.style.display = 'none';
-    entries[selectedIndex].classList.add('selected');
-}
+        // hide the grub-container and show the selected entry
+        function hideContainer() {
+          const container = document.querySelector('.grub-container');
+          container.style.display = 'none';
+          entries[selectedIndex].classList.add('selected');
+        }
 
-// handle key press event
-document.addEventListener('keydown', event => {
-    if (event.key === 'ArrowUp') {
-        selectPrevious();
-    } else if (event.key === 'ArrowDown') {
-        selectNext();
-    } else if (event.key === 'Enter') {
-        hideContainer();
-    }
-});
-
-// handle mouse hover event
-entries.forEach((entry, index) => {
-    entry.addEventListener('mouseover', () => {
-        selectedIndex = index;
-        highlightSelected();
-    });
-});
-
-// handle mouse click event
-entries.forEach((entry, index) => {
-    entry.addEventListener('click', () => {
-        selectedIndex = index;
-        hideContainer();
-    });
-});
-
-// select the first entry on page load
-highlightSelected();
-
-
-</script>
-    </div>
-    <p class="grub-help">Use the arrow keys to select which entry is highlightened. <br>Press enter to boot the selected OS, 'e' to edit the <br> commands before booting, or 'c' for a command-line.</p>
-</div>
-
-<div class="boot-container">
-  <div class="boot-logo">
-    <p class="grub-help1">Welcome, you are about to enter Francesco's space on the Web</p>
-    <p class="grub-help2">Press "Select System" to continue or "README" to show desription & guidance.</p>
-
-
-    <p class="boot-ascii">
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________/\\\\\\\\\\\\\\\____________/\\\\\\\\\\\\\\\____________________________________ <br> 
-____________________________________\/\\\///////////____________\/\\\///////////____________________________________ <br>
-_____________________________________\/\\\_______________________\/\\\______________________________________________ <br>
-______________________________________\/\\\\\\\\\\\_______________\/\\\\\\\\\\\_____________________________________ <br>
-_______________________________________\/\\\///////________________\/\\\///////_____________________________________ <br>   
-________________________________________\/\\\_______________________\/\\\___________________________________________ <br>  
-_________________________________________\/\\\_______________________\/\\\__________________________________________ <br>
-__________________________________________\/\\\_______________________\/\\\_________________________________________ <br>
-___________________________________________\///________________________\///_________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-____________________________________________________________________________________________________________________ <br>
-    </p>
-    <div class="boot-button-cont">
-      <div class="boot-button">Select System</div>
-      <div class="boot-button-read">README</div>
-
-
-      <script>// Get the boot-button element
-        const bootButton = document.querySelector('.boot-button');
-        
-        // Get the boot-container element
-        const bootContainer = document.querySelector('.boot-container');
-        
-        // Add a click event listener to the boot-button
-        bootButton.addEventListener('click', () => {
-          // Toggle the hide class on the boot-container
-          bootContainer.classList.toggle('hide');
+        // handle key press event
+        document.addEventListener('keydown', event => {
+          if (event.key === 'ArrowUp') {
+            selectPrevious();
+          } else if (event.key === 'ArrowDown') {
+            selectNext();
+          } else if (event.key === 'Enter') {
+            hideContainer();
+          }
         });
-        </script>
-    </div>
-  </div>
- 
-  
 
-</div>
+        // handle mouse hover event
+        entries.forEach((entry, index) => {
+          entry.addEventListener('mouseover', () => {
+            selectedIndex = index;
+            highlightSelected();
+          });
+        });
+
+        // handle mouse click event
+        entries.forEach((entry, index) => {
+          entry.addEventListener('click', () => {
+            selectedIndex = index;
+            hideContainer();
+          });
+        });
+
+        // select the first entry on page load
+        highlightSelected();
+
+
+      </script>
+    </div>
+    <p class="grub-help">Use the arrow keys to select which entry is highlightened. <br>Press enter to boot the selected
+      OS, 'e' to edit the <br> commands before booting, or 'c' for a command-line.</p>
+  </div>
+
+  <div class="boot-container">
+    <div class="boot-logo">
+      <p class="grub-help1">Welcome, you are about to enter Francesco's space on the Web</p>
+      <p class="grub-help2">Press "Select System" to continue or "README" to show desription & guidance.</p>
+
+
+      <p class="boot-ascii">
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________/\\\\\\\\\\\\\\\____________/\\\\\\\\\\\\\\\____________________________________
+        <br>
+        ____________________________________\/\\\///////////____________\/\\\///////////____________________________________
+        <br>
+        _____________________________________\/\\\_______________________\/\\\______________________________________________
+        <br>
+        ______________________________________\/\\\\\\\\\\\_______________\/\\\\\\\\\\\_____________________________________
+        <br>
+        _______________________________________\/\\\///////________________\/\\\///////_____________________________________
+        <br>
+        ________________________________________\/\\\_______________________\/\\\___________________________________________
+        <br>
+        _________________________________________\/\\\_______________________\/\\\__________________________________________
+        <br>
+        __________________________________________\/\\\_______________________\/\\\_________________________________________
+        <br>
+        ___________________________________________\///________________________\///_________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+        ____________________________________________________________________________________________________________________
+        <br>
+      </p>
+      <div class="boot-button-cont">
+        <div class="boot-button">Select System</div>
+        <div class="boot-button-read">README</div>
+
+
+        <script>// Get the boot-button element
+          const bootButton = document.querySelector('.boot-button');
+
+          // Get the boot-container element
+          const bootContainer = document.querySelector('.boot-container');
+
+          // Add a click event listener to the boot-button
+          bootButton.addEventListener('click', () => {
+            // Toggle the hide class on the boot-container
+            bootContainer.classList.toggle('hide');
+          });
+        </script>
+      </div>
+    </div>
+
+
+
+  </div>
 
 </body>
+
 </html>

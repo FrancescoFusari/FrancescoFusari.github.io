@@ -188,6 +188,8 @@ button {
     border: 0px;
     background-color: rgba(0, 0, 0, 0.604);
     border-radius: 4px;  
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding-bottom: 8px;
     padding-top: 8px;
     padding-right: 10px;
@@ -337,15 +339,14 @@ h3 {
 
 #drag-square3 {
     position: absolute;
-    left: 30vw;
-    top: 30vh;
+    left: 60vw;
+    top: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: self-start;
-    width: auto;
-    background-color: rgb(3, 17, 170);
-    backdrop-filter: blur(20px);
+    width: 50vw;
+    background-color: rgb(193, 196, 228);
     border-radius: 4px;
     box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
     resize: both;
@@ -565,6 +566,8 @@ h3 {
     justify-content: baseline;
     align-items: center;
     column-gap: 50px;
+    
+
 }
 
 .grub-content {
@@ -658,6 +661,8 @@ h3 {
     font-size: large;
     font-weight: 500;
     color: aliceblue;
+    
+
 }
 
 .boot-ascii {
@@ -758,3 +763,133 @@ h3 {
     display: none;
   }
   
+  .portfolio-bar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: grey;
+  }
+
+  .toolbar-entry {
+    margin: 0px;
+    margin-right: 18px;
+    color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 300;
+  }
+  
+  .file-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: white;
+    color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 8px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: grey;
+  }
+
+  .file-nav-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+  }
+
+  .file-nav-icon {
+    margin-right: 20px;
+    height: 24px;
+  }
+
+  .file-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: grey;
+    padding: 6px;
+    width: 100%;
+    margin-right: 5px;
+  }
+
+  .file-path {
+    margin: 0px;
+    line-height: 0px;
+  }
+
+  .file-view-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+
+  .sidebar {
+    background-color: aliceblue;
+    width: 30%;
+    max-width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .sidebar-title {
+    color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 600;
+  }
+
+  .sidebar-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sidebar-entry-text {
+    margin-left: 10px;
+    color: rgb(19, 19, 19);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    font-weight: 300;
+  }
+
+  .sidebar-entry:hover {
+    background-color: rgb(203, 216, 228);
+  }

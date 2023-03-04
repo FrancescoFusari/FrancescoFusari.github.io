@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatGPT API Demo</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>ChatGPT API Demo</h1>
+    <label for="user-input">You:</label>
+    <input type="text" id="user-input">
+    <button id="send-button">Send</button>
+    <div id="chat-log"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@openai/chat-api@0.5.0/dist/index.min.js"></script>
+    <script>
+        const chatApi = new openai.Chat({ api_key: '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' });
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-button');
+const chatLog = document.getElementById('chat-log');
+
+sendButton.addEventListener('click', async () => {
+  const userInputValue = userInput.value;
+  const chatApiResponse = await chatApi.message(userInputValue, { model: 'text-davinci-002' });
+  const chatBotResponse = chatApiResponse.data[0].text;
+  const chatLogEntry = document.createElement('div');
+  chatLogEntry.innerHTML = `
+    <p>You: ${userInputValue}</p>
+    <p>Chatbot: ${chatBotResponse}</p>
+  `;
+  chatLog.appendChild(chatLogEntry);
+  userInput.value = '';
+});
+
+    </script>
+  </body>
+</html>
