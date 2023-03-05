@@ -669,7 +669,7 @@ h3 {
     font-family: monospace;
     white-space: pre;
     overflow: hidden;
-    line-height: 10px;
+    line-height: 8px;
     opacity: 0;
     animation: typing 4s steps(60, end) 6s forwards;
     color: rgba(255, 255, 255, 0.836);
