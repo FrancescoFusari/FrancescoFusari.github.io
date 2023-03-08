@@ -206,6 +206,22 @@ button {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    cursor: pointer;
+}
+
+.min:hover {
+  transform: scale(1.2);
+  filter: saturate(0.5);
+}
+
+.max:hover {
+  transform: scale(1.2);
+  filter: saturate(0.5);
+}
+
+.close:hover {
+  transform: scale(1.2);
+  filter: saturate(0.5);
 }
 
 .max {
@@ -217,6 +233,7 @@ button {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .close {
@@ -227,6 +244,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .fetch {
@@ -363,6 +381,32 @@ h3 {
     border-width: 2px;
     border-color: rgba(240, 248, 255, 0.565);
     border-radius: 6px;
+}
+
+#drag-square4 {
+  position: absolute;
+  left: 80vw;
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start;
+  width: 480px;
+  height: 720px;
+  background-color: rgb(217, 217, 217);
+  border-radius: 18px;
+  box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
+  resize: both;
+  overflow: auto;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+    #drag-square4:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(240, 248, 255, 0.565);
+  border-radius: 18px;
 }
 
   .minimized {
@@ -566,7 +610,7 @@ h3 {
     justify-content: baseline;
     align-items: center;
     column-gap: 50px;
-    
+    display: none;
 
 }
 
@@ -661,7 +705,7 @@ h3 {
     font-size: large;
     font-weight: 500;
     color: aliceblue;
-    
+  display: none;
 
 }
 
@@ -892,4 +936,136 @@ h3 {
 
   .sidebar-entry:hover {
     background-color: rgb(203, 216, 228);
+  }
+
+
+  .chat-container {
+    width: 98%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .input-area {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .bar-buttons-chat {
+    background-color: rgb(21, 21, 213);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  #min4 {
+    background-color: transparent;
+    filter: invert();
+  }
+
+  .chat-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    color: aliceblue;
+  }
+
+  .chat-topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .chat-mode {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  }
+
+  .chat-mode-button {
+    border-radius: 8px;
+    background-color: blueviolet;
+    padding: 8px 16px 8px 16px;
+    width: 48%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight: 300;
+    color: aliceblue;
+    border-width: 0px;
+  }
+
+  .chat-mode-button:hover {
+    background-color: rgb(101, 28, 170);
+  }
+
+
+  .chat-container {
+    background-color: rgb(217, 217, 217);
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+  }
+
+  #txtOutput { 
+    background-color: transparent;
+    border-width: 0px;
+    height: 400px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    cursor: default;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+    border-radius: 12px;
+    resize: none;
+    margin-top: 0px;
+  }
+ 
+
+  .response {
+    color: black;
+  }
+
+  #txtMsg {
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    border-width: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    resize: none;
+  }
+
+  #btnSend {
+    border-radius: 999px;
+    border-width: 0px;
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #selModel {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
