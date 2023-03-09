@@ -363,21 +363,24 @@ h3 {
 #drag-square3 {
     position: absolute;
     left: 60vw;
-    top: 40vh;
+    top: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: self-start;
-    width: 50vw;
+    width: 1200px;
+    height: 700px;
     background-color: rgb(193, 196, 228);
     border-radius: 4px;
     box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.15);
     resize: both;
     overflow: auto;
     z-index: 2;
-    top: 70%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: ease-in-out;
+    transition-duration: 0.3s;
 
 }
 
@@ -415,11 +418,11 @@ h3 {
 }
 
   .minimized {
-    height: 0;
     opacity: 0;
     color: transparent;
     font-size: 0px;
     pointer-events: none;
+    transform: translate(-100px, -50px);
   }
 
 
@@ -945,6 +948,12 @@ h3 {
   }
 
 
+  .file-view {
+    display: flex;
+    flex-direction: row;
+  }
+
+
   .chat-container {
     width: 98%;
     padding: 10px;
@@ -954,6 +963,8 @@ h3 {
   .input-area {
     display: flex;
     flex-direction: row;
+    background-color: white;
+    border-radius: 999px;
 
   }
 
@@ -974,9 +985,9 @@ h3 {
   }
 
   .chat-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1rem;
     color: aliceblue;
   }
 
@@ -1012,6 +1023,8 @@ h3 {
   .chat-mode-button:hover {
     background-color: rgb(101, 28, 170);
   }
+
+
 
 
   .chat-container {
