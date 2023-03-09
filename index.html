@@ -22,6 +22,42 @@
 </head>
 
 <body id="element">
+
+  <div class="back dark" id="my-div">
+    <div class="desk-icon" id="portIcon">
+      <img src="folder-desk.png" alt="" width="32px">
+      <p class="desk-icon-text">Portfolio</p>
+      <script>
+        const portIcon = document.getElementById('portIcon');
+
+        portIcon.addEventListener('dblclick', () => {
+          dragSquare3.classList.remove('minimized');
+        });
+      </script>
+    </div>
+    <div class="desk-icon" id="termIcon">
+      <img src="term.webp" alt="" width="32px">
+      <p class="desk-icon-text">Terminal</p>
+      <script>
+        const termIcon = document.getElementById('termIcon');
+
+        termIcon.addEventListener('dblclick', () => {
+          dragSquare.classList.remove('minimized');
+        });
+      </script>
+    </div>
+    <div class="desk-icon" id="chatIcon">
+      <img src="chat.jpg" alt="" width="32px" class="chaticon">
+      <p class="desk-icon-text">AI-Chat</p>
+      <script>
+        const chatIcon = document.getElementById('chatIcon');
+
+        chatIcon.addEventListener('dblclick', () => {
+          dragSquare4.classList.remove('minimized');
+        });
+      </script>
+    </div>
+  </div>
   <div class="topbar">
     <div class="left-panel">
       <p class="logotxt">FF</p>
@@ -44,28 +80,23 @@
         const myButton = document.getElementById('my-button');
 
         myButton.addEventListener('click', () => {
-          myDiv.style.backgroundImage = "url('dark.jpg')";
+          myDiv.style.removeProperty('background-color');
+          myDiv.classList.remove('light');
+          myDiv.classList.add('dark');
         });
       </script>
       <button class="button1 small" id="my-button1"> <img src="sun.png" alt="" srcset="" width="16px"
           height="16px"></button>
       <script>
-        const myDiv1 = document.getElementById('my-div');
         const myButton1 = document.getElementById('my-button1');
-
         myButton1.addEventListener('click', () => {
-          myDiv1.style.backgroundImage = "url('light.webp')";
+          myDiv.style.removeProperty('background-color');
+          myDiv.classList.remove('dark');
+          myDiv.classList.add('light');
         });
       </script>
     </div>
   </div>
-  <div class="back" id="my-div">
-
-  </div>
-
-
-
-
   <div class="appbar">
 
     <div id="homeico" class="icon">
@@ -112,8 +143,7 @@
     </div>
   </div>
 
-
-  <div id="drag-square" class="terminal">
+  <div id="drag-square" class="terminal minimized">
     <div class="bar-buttons">
       <div class="min" id="min"></div>
       <script>
@@ -242,7 +272,7 @@
   </div>
   
 
-  <div id="drag-square1" class="window ">
+  <div id="drag-square1" class="window minimized">
     <div class="bar-buttons">
       <div class="min" id="min1"></div>
       <script>
@@ -342,7 +372,7 @@
     </script>
   </div>
 
-  <div id="drag-square3" class="window portfolio">
+  <div id="drag-square3" class="window portfolio minimized">
     <div class="bar-buttons">
       <div class="min" id="min3"></div>
       <script>
@@ -438,7 +468,7 @@
     </script>
   </div>
 
-  <div id="drag-square4" class="window portfolio">
+  <div id="drag-square4" class="window portfolio minimized">
     <div class="bar-buttons bar-buttons-chat">
       <div class="chat-topbar">
       <div  id="min4">
