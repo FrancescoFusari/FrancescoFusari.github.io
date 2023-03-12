@@ -437,7 +437,17 @@
         </div>
       </div>
       <div class="file-view">
-        div
+        <div class="desk-icon" id="port1Icon">
+          <img src="folder-desk.png" alt="" width="32px">
+          <p class="desk-icon-text">Portfolio</p>
+          <script>
+            const port1Icon = document.getElementById('port1Icon');
+    
+            port1Icon.addEventListener('click', () => {
+              dragSquare5.classList.remove('minimized');
+            });
+          </script>
+        </div>
       </div>
     </div>
     <script>
@@ -540,6 +550,57 @@
     </script>
   </div>
 
+  <div id="drag-square5" class="window portfolio minimized">
+    <div class="bar-buttons">
+      <div class="min" id="min5"></div>
+      <script>
+        const dragSquare5 = document.getElementById('drag-square5');
+        const minButton5 = document.getElementById('min5');
+
+        minButton5.addEventListener('click', () => {
+          dragSquare5.classList.add('minimized');
+        });
+      </script>
+      <div class="max"></div>
+      <div class="close"></div>
+    </div>
+    <div class="webframe">
+      <div class="rounded">
+      <embed src="https://www.cloneweb.it/" style="width: 100%; height: 100%;" class="frame" >
+      </div>
+      <div class="rounded1">
+        <iframe src="https://www.cloneweb.it/" style="width: 100%; height: 100%;" class="frame" scrolling-horizontal="no">
+        </div>
+    </div>
+    <script>
+      let isDragging5 = false;
+      let dragOffset5 = { x: 0, y: 0 };
+      let initialOffset5 = { x: 0, y: 0 };
+  
+      dragSquare3.addEventListener('mousedown', (event) => {
+        isDragging5 = true;
+        initialOffset5.x = dragSquare5.offsetLeft;
+        initialOffset5.y = dragSquare5.offsetTop;
+        dragOffset5.x = event.clientX;
+        dragOffset5.y = event.clientY;
+      });
+  
+      document.addEventListener('mousemove', (event) => {
+        if (isDragging5) {
+          const x = event.clientX - dragOffset5.x;
+          const y = event.clientY - dragOffset5.y;
+          dragSquare5.style.left = `${initialOffset5.x + x}px`;
+          dragSquare5.style.top = `${initialOffset5.y + y}px`;
+        }
+      });
+  
+      document.addEventListener('mouseup', () => {
+        isDragging5 = false;
+      });
+  
+  
+    </script>
+  </div>
   
   <script>
     function toggleFullScreen(elem) {
