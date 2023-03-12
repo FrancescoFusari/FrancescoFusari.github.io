@@ -22,7 +22,216 @@
 </head>
 
 <body id="element">
+  <div class="grub-container">
+    <h1 class="grub-title">FNU FRUB 2.038329732</h1>
+    <P class="subtittle">You are about to enter:</P>
+    <div class="grub-content">
+      <p class="grub-entry">Frindows 0.2</p>
+      <p class="grub-entry">Advanced options for Frindows 0.2</p>
+      <p class="grub-entry">Memory test (fratest25+)</p>
+      <p class="grub-entry">Memory test (fratest25+, easter egg, here)</p>
+      <div class="spacer"></div>
+      <script>
+        const entries = document.querySelectorAll('.grub-entry');
+        let selectedIndex = 0;
 
+        // highlight the selected entry
+        function highlightSelected() {
+          entries.forEach((entry, index) => {
+            if (index === selectedIndex) {
+              entry.classList.add('selected');
+            } else {
+              entry.classList.remove('selected');
+            }
+          });
+        }
+
+        // select the next entry
+        function selectNext() {
+          selectedIndex++;
+          if (selectedIndex >= entries.length) {
+            selectedIndex = 0;
+          }
+          highlightSelected();
+        }
+
+        // select the previous entry
+        function selectPrevious() {
+          selectedIndex--;
+          if (selectedIndex < 0) {
+            selectedIndex = entries.length - 1;
+          }
+          highlightSelected();
+        }
+
+        // hide the grub-container and show the selected entry
+        function hideContainer() {
+          const container = document.querySelector('.grub-container');
+          container.style.display = 'none';
+          entries[selectedIndex].classList.add('selected');
+        }
+
+        // handle key press event
+        document.addEventListener('keydown', event => {
+          if (event.key === 'ArrowUp') {
+            selectPrevious();
+          } else if (event.key === 'ArrowDown') {
+            selectNext();
+          } else if (event.key === 'Enter') {
+            hideContainer();
+          }
+        });
+
+        // handle mouse hover event
+        entries.forEach((entry, index) => {
+          entry.addEventListener('mouseover', () => {
+            selectedIndex = index;
+            highlightSelected();
+          });
+        });
+
+        // handle mouse click event
+        entries.forEach((entry, index) => {
+          entry.addEventListener('click', () => {
+            selectedIndex = index;
+            hideContainer();
+          });
+        });
+
+        // select the first entry on page load
+        highlightSelected();
+
+
+      </script>
+    </div>
+    <p class="grub-help">Use the arrow keys to select which entry is highlightened. <br>Press enter to boot the selected
+      OS, 'e' to edit the <br> commands before booting, or 'c' for a command-line.</p>
+  </div>
+  <div class="boot-container">
+    <div class="boot-logo">
+      <p class="grub-help1">Welcome, you are about to enter Francesco's space on the Web</p>
+      <p class="grub-help2">Press "Select System" to continue or "README" to show desription & guidance.</p>
+
+
+      <p class="boot-ascii">
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+____________________________________/\\\\\\\\\\\\\\\____________/\\\\\\\\\\\\\\\___________________________________<br>
+____________________________________\/\\\///////////____________\/\\\///////////___________________________________<br>
+_____________________________________\/\\\_______________________\/\\\_____________________________________________<br>
+______________________________________\/\\\\\\\\\\\_______________\/\\\\\\\\\\\____________________________________<br>
+_______________________________________\/\\\///////________________\/\\\///////____________________________________<br>
+________________________________________\/\\\_______________________\/\\\__________________________________________<br>
+_________________________________________\/\\\_______________________\/\\\_________________________________________<br>
+__________________________________________\/\\\_______________________\/\\\________________________________________<br>
+___________________________________________\///________________________\///________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+___________________________________________________________________________________________________________________<br>
+      </p>
+      <div class="boot-button-cont">
+        <div class="boot-button">Select System</div>
+        <div class="boot-button-read">README</div>
+
+
+        <script>// Get the boot-button element
+          const bootButton = document.querySelector('.boot-button');
+
+          // Get the boot-container element
+          const bootContainer = document.querySelector('.boot-container');
+
+          // Add a click event listener to the boot-button
+          bootButton.addEventListener('click', () => {
+            // Toggle the hide class on the boot-container
+            bootContainer.classList.toggle('hide');
+          });
+        </script>
+      </div>
+    </div>
+
+
+
+  </div>
+  
+  <script>
+    function toggleFullScreen(elem) {
+      // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+      if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+          elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+          elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        }
+      } else {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    }
+  </script>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+
+    // create a new hydra-synth instance
+    var hydra = new Hydra({
+      canvas,
+      detectAudio: false,
+      enableStreamCapture: false,
+    })
+
+
+
+    var r = 0.3;
+    var g = 1;
+    var b = 1;
+    var k = 4;
+    var mod = 0;
+
+    osc(13, 0, 1)
+      .kaleid(() => k)
+      .mask(shape(4, 23, 1))
+      .modulateRotate(shape(4, 0.1, 1))
+      .modulateRotate(shape(4, 0.1, 0.9))
+      .modulateRotate(shape(4, 0.1, 0.8))
+      .scale(0.3)
+      .add(shape(4, 0.2, 1).color(() => r, () => g, () => b, 0.5))
+      .modulate(
+        osc(6, 0, 1.5).brightness(-.5)
+          .modulate(noise(10, 0.1).sub(gradient()), 1), () => mod
+      )
+      .rotate(0, 1)
+      .scale(1, () => window.innerHeight / window.innerWidth)
+      .modulateKaleid(osc(11, 0.5, 0), 50)
+      .scale(0.1, 0.3)
+      .modulate(noise(5, 0.1))
+      .mult(solid(1, 1, 0.3))
+      .out()
+
+
+  </script>
+  
   <div class="back dark" id="my-div">
     <div class="desk-icon" id="portIcon">
       <img src="folder-desk.png" alt="" width="32px">
@@ -548,7 +757,6 @@
   
   
     </script>
-  </div>
 
   <div id="drag-square5" class="window portfolio minimized">
     <div class="bar-buttons">
@@ -601,218 +809,10 @@
   
     </script>
   </div>
+
   
-  <script>
-    function toggleFullScreen(elem) {
-      // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-      if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
-        if (elem.requestFullScreen) {
-          elem.requestFullScreen();
-        } else if (elem.mozRequestFullScreen) {
-          elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullScreen) {
-          elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (elem.msRequestFullscreen) {
-          elem.msRequestFullscreen();
-        }
-      } else {
-        if (document.cancelFullScreen) {
-          document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      }
-    }
-  </script>
 
-  <script>
-    const canvas = document.getElementById("myCanvas");
-
-    // create a new hydra-synth instance
-    var hydra = new Hydra({
-      canvas,
-      detectAudio: false,
-      enableStreamCapture: false,
-    })
-
-
-
-    var r = 0.3;
-    var g = 1;
-    var b = 1;
-    var k = 4;
-    var mod = 0;
-
-    osc(13, 0, 1)
-      .kaleid(() => k)
-      .mask(shape(4, 23, 1))
-      .modulateRotate(shape(4, 0.1, 1))
-      .modulateRotate(shape(4, 0.1, 0.9))
-      .modulateRotate(shape(4, 0.1, 0.8))
-      .scale(0.3)
-      .add(shape(4, 0.2, 1).color(() => r, () => g, () => b, 0.5))
-      .modulate(
-        osc(6, 0, 1.5).brightness(-.5)
-          .modulate(noise(10, 0.1).sub(gradient()), 1), () => mod
-      )
-      .rotate(0, 1)
-      .scale(1, () => window.innerHeight / window.innerWidth)
-      .modulateKaleid(osc(11, 0.5, 0), 50)
-      .scale(0.1, 0.3)
-      .modulate(noise(5, 0.1))
-      .mult(solid(1, 1, 0.3))
-      .out()
-
-
-  </script>
-
-
-  <div class="grub-container">
-    <h1 class="grub-title">FNU FRUB 2.038329732</h1>
-    <P class="subtittle">You are about to enter:</P>
-    <div class="grub-content">
-      <p class="grub-entry">Frindows 0.2</p>
-      <p class="grub-entry">Advanced options for Frindows 0.2</p>
-      <p class="grub-entry">Memory test (fratest25+)</p>
-      <p class="grub-entry">Memory test (fratest25+, easter egg, here)</p>
-      <div class="spacer"></div>
-      <script>
-        const entries = document.querySelectorAll('.grub-entry');
-        let selectedIndex = 0;
-
-        // highlight the selected entry
-        function highlightSelected() {
-          entries.forEach((entry, index) => {
-            if (index === selectedIndex) {
-              entry.classList.add('selected');
-            } else {
-              entry.classList.remove('selected');
-            }
-          });
-        }
-
-        // select the next entry
-        function selectNext() {
-          selectedIndex++;
-          if (selectedIndex >= entries.length) {
-            selectedIndex = 0;
-          }
-          highlightSelected();
-        }
-
-        // select the previous entry
-        function selectPrevious() {
-          selectedIndex--;
-          if (selectedIndex < 0) {
-            selectedIndex = entries.length - 1;
-          }
-          highlightSelected();
-        }
-
-        // hide the grub-container and show the selected entry
-        function hideContainer() {
-          const container = document.querySelector('.grub-container');
-          container.style.display = 'none';
-          entries[selectedIndex].classList.add('selected');
-        }
-
-        // handle key press event
-        document.addEventListener('keydown', event => {
-          if (event.key === 'ArrowUp') {
-            selectPrevious();
-          } else if (event.key === 'ArrowDown') {
-            selectNext();
-          } else if (event.key === 'Enter') {
-            hideContainer();
-          }
-        });
-
-        // handle mouse hover event
-        entries.forEach((entry, index) => {
-          entry.addEventListener('mouseover', () => {
-            selectedIndex = index;
-            highlightSelected();
-          });
-        });
-
-        // handle mouse click event
-        entries.forEach((entry, index) => {
-          entry.addEventListener('click', () => {
-            selectedIndex = index;
-            hideContainer();
-          });
-        });
-
-        // select the first entry on page load
-        highlightSelected();
-
-
-      </script>
-    </div>
-    <p class="grub-help">Use the arrow keys to select which entry is highlightened. <br>Press enter to boot the selected
-      OS, 'e' to edit the <br> commands before booting, or 'c' for a command-line.</p>
-  </div>
-
-  <div class="boot-container">
-    <div class="boot-logo">
-      <p class="grub-help1">Welcome, you are about to enter Francesco's space on the Web</p>
-      <p class="grub-help2">Press "Select System" to continue or "README" to show desription & guidance.</p>
-
-
-      <p class="boot-ascii">
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-____________________________________/\\\\\\\\\\\\\\\____________/\\\\\\\\\\\\\\\___________________________________<br>
-____________________________________\/\\\///////////____________\/\\\///////////___________________________________<br>
-_____________________________________\/\\\_______________________\/\\\_____________________________________________<br>
-______________________________________\/\\\\\\\\\\\_______________\/\\\\\\\\\\\____________________________________<br>
-_______________________________________\/\\\///////________________\/\\\///////____________________________________<br>
-________________________________________\/\\\_______________________\/\\\__________________________________________<br>
-_________________________________________\/\\\_______________________\/\\\_________________________________________<br>
-__________________________________________\/\\\_______________________\/\\\________________________________________<br>
-___________________________________________\///________________________\///________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-___________________________________________________________________________________________________________________<br>
-      </p>
-      <div class="boot-button-cont">
-        <div class="boot-button">Select System</div>
-        <div class="boot-button-read">README</div>
-
-
-        <script>// Get the boot-button element
-          const bootButton = document.querySelector('.boot-button');
-
-          // Get the boot-container element
-          const bootContainer = document.querySelector('.boot-container');
-
-          // Add a click event listener to the boot-button
-          bootButton.addEventListener('click', () => {
-            // Toggle the hide class on the boot-container
-            bootContainer.classList.toggle('hide');
-          });
-        </script>
-      </div>
-    </div>
-
-
-
-  </div>
+  
 
 </body>
 
